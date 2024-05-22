@@ -5,7 +5,7 @@ import Home from "./home";
 
 export default function Index() {
   return (
-    <NativeBaseProvider>
+    <NativeBaseProvider >
       <Home />
     </NativeBaseProvider>
   )
