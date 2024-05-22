@@ -3,9 +3,7 @@ import { Box, Button, Heading, Icon, Input, Pressable, Stack } from "native-base
 import { MaterialIcons } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons"
 
-
-
-export default function Login() {
+export function Login() {
   const [show, setShow] = React.useState(false);
   return (
 

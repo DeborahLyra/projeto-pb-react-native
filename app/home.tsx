@@ -1,5 +1,5 @@
 import React from 'react';
-import Login from "@/screens/signup/Signup";
+import { Login } from "@/screens/login/Login";
 import { Box } from "native-base";
 
 export default function Home() {
