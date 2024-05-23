@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Box, Center, Flex, Heading, Text, IconButton, Icon } from 'native-base';
 import { Avatar } from '../avatar/Avatar';
-import { MaterialIcons } from '@expo/vector-icons'; // Importando ícones do MaterialIcons
+import { MaterialIcons } from '@expo/vector-icons';
+import { formatDistanceToNow } from 'date-fns';
+import ptBR from 'date-fns/locale/pt-BR';
 
 interface PostProps {
   content: {
@@ -18,6 +20,17 @@ interface PostProps {
 }
 
 export function Posts({ content }: PostProps) {
+
+  const [likeCount, setLikeCount] = useState(0);
+
+  const handleLikes = () => {
+    setLikeCount(likeCount + 1);
+
+  };
+
+  const formattedDate = formatDistanceToNow(new Date(content.publishedAt), { locale: ptBR, addSuffix: true });
+
+
   return (
     <Box mt={32} px={4}>
       <Center>
@@ -53,29 +66,36 @@ export function Posts({ content }: PostProps) {
             />
           </Flex>
 
-          <Flex direction="row">
-            <IconButton
-              icon={<Icon as={MaterialIcons} name="favorite" size="5" />}
-              borderRadius="full"
-              w={10}
-              _icon={{
-                color: "red.50",
-                size: "lg",
-              }}
-              onPress={() => console.log('like post', content.id)}
-            />
-            <IconButton
-              icon={<Icon as={MaterialIcons} name="keyboard-arrow-down" size="5" />}
-              borderRadius="full"
-              w={10}
+          <Flex direction="row" justifyContent="space-between" alignItems='center'>
+            <Flex direction="row" alignItems='center'>
+              <IconButton
+                icon={<Icon as={MaterialIcons} name="favorite" size="5" />}
+                borderRadius="full"
+                w={10}
+                _icon={{
+                  color: "red.500",
+                  size: "lg",
+                }}
+                onPress={handleLikes}
+              />
+              <IconButton
+                icon={<Icon as={MaterialIcons} name="keyboard-arrow-down" size="5" />}
+                borderRadius="full"
+                w={10}
 
-              _icon={{
-                color: "tertiary.600",
-                size: "lg",
-              }}
-              onPress={() => console.log('show post', content.id)}
-            />
+                _icon={{
+                  color: "tertiary.600",
+                  size: "lg",
+                }}
+                onPress={() => console.log('show post', content.id)}
+              />
+            </Flex>
+            <Text fontSize="xs" color="muted.700" mt={2}>
+              Publicado {formattedDate}
+            </Text>
           </Flex>
+
+
         </Box>
       </Box>
     </Box>
