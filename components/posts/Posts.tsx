@@ -102,6 +102,7 @@ export function Posts({ content }: PostProps) {
 
       <Comment content={content} />
       <Comment content={content} />
+      <Comment content={content} />
     </Box>
   );
 }

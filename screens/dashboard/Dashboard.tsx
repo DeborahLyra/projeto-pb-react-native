@@ -18,7 +18,7 @@ const post = {
 const url = "https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D"
 export function Dashboard() {
   return (
-    <ScrollView>
+    <ScrollView p={2}>
      <Posts content={post}/>
     </ScrollView>
   )
