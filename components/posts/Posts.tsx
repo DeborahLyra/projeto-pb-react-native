@@ -4,6 +4,7 @@ import { Avatar } from '../avatar/Avatar';
 import { MaterialIcons } from '@expo/vector-icons';
 import { formatDistanceToNow } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
+import { Comment } from '../comments/Comment';
 
 interface PostProps {
   content: {
@@ -36,7 +37,7 @@ export function Posts({ content }: PostProps) {
       <Center>
         <Heading mb={10} fontSize="3xl" color="tertiary.600">ForumTalk</Heading>
       </Center>
-      <Box bg='muted.400' p={4} borderRadius={5}>
+      <Box bg='muted.400' p={4} borderRadius={5} mb={4}>
         <Flex direction="row" alignItems="center" justifyContent="start">
           <Avatar src={content.author.avatarUrl} />
           <Box ml={4}>
@@ -98,6 +99,9 @@ export function Posts({ content }: PostProps) {
 
         </Box>
       </Box>
+
+      <Comment content={content} />
+      <Comment content={content} />
     </Box>
   );
 }
