@@ -6,6 +6,8 @@ import { NativeBaseProvider } from 'native-base';
 import { Dashboard } from '@/screens/dashboard/Dashboard';
 import { Login } from '@/screens/login/Login';
 import { RootStackParamList } from '@/types';
+import { Profile } from '@/screens/profile/Profile';
+import { Ranking } from '@/screens/ranking/Ranking';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -16,6 +18,8 @@ export default function Index() {
         <Stack.Navigator initialRouteName="Login" screenOptions={{ headerShown: false }}>
           <Stack.Screen name="Dashboard" component={Dashboard} />
           <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen name="Profile" component={Profile} />
+          <Stack.Screen name="Ranking" component={Ranking} /> 
         </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>

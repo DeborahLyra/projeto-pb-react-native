@@ -33,10 +33,8 @@ export function Posts({ content }: PostProps) {
 
 
   return (
-    <Box mt={32} px={4} bg='muted.600'>
-      <Center>
-        <Heading mb={10} fontSize="3xl" color="tertiary.600">ForumTalk</Heading>
-      </Center>
+    <Box mt={10} px={4} bg='muted.600'>
+     
       <Box bg='muted.400' p={4} borderRadius={5} mb={4}>
         <Flex direction="row" alignItems="center" justifyContent="start">
           <Avatar src={content.author.avatarUrl} />

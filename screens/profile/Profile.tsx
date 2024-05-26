@@ -1,5 +1,8 @@
 import { Avatar } from "@/components/avatar/Avatar";
-import { Box, Center, Flex, Heading, Text, Divider } from "native-base";
+import { RootStackParamList } from "@/types";
+import { NavigationProp, useNavigation } from "@react-navigation/native";
+import { Box, Center, Flex, Heading, Text, Divider, Button, ChevronLeftIcon, Icon, IconButton, ScrollView } from "native-base";
+import { MaterialIcons } from '@expo/vector-icons';
 
 const post = {
     id: "2",
@@ -14,8 +17,20 @@ const post = {
 };
 
 export function Profile() {
+    const navigation = useNavigation<NavigationProp<RootStackParamList>>();
     return (
-        <Box safeArea p={4} >
+        <ScrollView pt={10}  p={4} bg='muted.600' >
+            <IconButton
+                icon={<Icon as={MaterialIcons} name="arrow-left" size="16" />}
+                borderRadius="full"
+                 
+                w={10}
+                _icon={{
+                    color: "tertiary.600",
+                    size: "lg",
+                }}
+                onPress={() => navigation.goBack()}
+            />
             <Center>
                 <Heading mb={10} fontSize="3xl" color="tertiary.600">Perfil</Heading>
             </Center>
@@ -43,6 +58,6 @@ export function Profile() {
                     </Text>
                 </Box>
             </Box>
-        </Box>
+        </ScrollView>
     )
 }

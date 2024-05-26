@@ -1,4 +1,7 @@
-import { Avatar, Box, FlatList, Heading, HStack, VStack, Text, Spacer, Center } from "native-base";
+import { Avatar, Box, FlatList, Heading, HStack, VStack, Text, Spacer, Center, IconButton, Icon, ScrollView } from "native-base";
+import { MaterialIcons } from '@expo/vector-icons';
+import { RootStackParamList } from "@/types";
+import { NavigationProp, useNavigation } from "@react-navigation/native";
 
 export const Ranking = () => {
     const data = [{
@@ -32,8 +35,20 @@ export const Ranking = () => {
         recentText: "I will call today.",
         avatarUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBwgu1A5zgPSvfE83nurkuzNEoXs9DMNr8Ww&usqp=CAU"
     }];
+
+    const navigation = useNavigation<NavigationProp<RootStackParamList>>();
     return (
-        <Box safeArea p={4}>
+        <ScrollView pt={10} p={4} bg='muted.600'>
+            <IconButton
+                icon={<Icon as={MaterialIcons} name="arrow-left" size="16" />}
+                borderRadius="full"
+                w={10}
+                _icon={{
+                    color: "tertiary.600",
+                    size: "lg",
+                }}
+                onPress={() => navigation.goBack()}
+            />
             <Center>
                 <Heading mb={5} fontSize="3xl" color="tertiary.600">Ranking</Heading>
                 <Text mb={10} fontSize="lg" color="tertiary.600">Confira a lista dos mais curtidos</Text>
@@ -63,7 +78,7 @@ export const Ranking = () => {
                     </HStack>
                 </Box>;
             }} keyExtractor={item => item.id} />
-        </Box>
+        </ScrollView>
     )
 
 };
