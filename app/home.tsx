@@ -5,6 +5,7 @@ import { Dashboard } from '@/screens/dashboard/Dashboard';
 import {Ranking} from '../screens/ranking/Ranking'
 import { Profile } from '@/screens/profile/Profile';
 import { Signin } from '@/screens/signin/Signin';
+import { NavigationContainer } from '@react-navigation/native';
 
 export default function Home() {
     return (
@@ -13,7 +14,7 @@ export default function Home() {
             {/* <Dashboard/> */}
             {/* <Profile/> */}
             {/* <Ranking/> */}
-            <Signin/>
+            {/* <Signin/> */}
         </Box>
     );
 }

@@ -2,15 +2,19 @@ import React from "react";
 import { Box, Button, Heading, Icon, Input, Pressable, Stack } from "native-base";
 import { MaterialIcons } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons"
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { RootStackParamList } from "@/types";
 
-export function Login() {
+type Props = NativeStackScreenProps<RootStackParamList, 'Login'>;
+
+export function Login({ navigation }: Props) {
   const [show, setShow] = React.useState(false);
-  return (
 
+  return (
     <Box
       alignItems="center"
       justifyContent="center"
-      mt={40}
+      flex={1}
       p={2}
       bg='muted.600'>
       <Icon as={Ionicons} name="chatbubble" size="6xl" color="tertiary.600" mb={10} />
@@ -33,6 +37,7 @@ export function Login() {
         bg='tertiary.600'
         mt={8}
         w="80%"
+        onPress={() => navigation.navigate('Dashboard')}
       >
         Entrar
       </Button>

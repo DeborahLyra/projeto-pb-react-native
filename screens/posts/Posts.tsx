@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Box, Center, Flex, Heading, Text, IconButton, Icon } from 'native-base';
-import { Avatar } from '../avatar/Avatar';
+import { Box, Center, Flex, Heading, Text, IconButton, Icon, Fab } from 'native-base';
+import { Avatar } from '../../components/avatar/Avatar';
 import { MaterialIcons } from '@expo/vector-icons';
 import { formatDistanceToNow } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
-import { Comment } from '../comments/Comment';
+import { Comment } from '@/components/comments/Comment';
 
 interface PostProps {
   content: {
@@ -33,7 +33,7 @@ export function Posts({ content }: PostProps) {
 
 
   return (
-    <Box mt={32} px={4}>
+    <Box mt={32} px={4} bg='muted.600'>
       <Center>
         <Heading mb={10} fontSize="3xl" color="tertiary.600">ForumTalk</Heading>
       </Center>
@@ -102,7 +102,9 @@ export function Posts({ content }: PostProps) {
 
       <Comment content={content} />
       <Comment content={content} />
-      <Comment content={content} />
+
+     
+      
     </Box>
   );
 }
