@@ -24,7 +24,7 @@ const url = "https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=500&
 export function Dashboard() {
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
   return (
-    <ScrollView  p={2} bg='muted.600' >
+    <ScrollView  p={2} bg='muted.600'>
        <Center pt={20}>
         <Heading mb={5} fontSize="3xl" color="tertiary.600">ForumTalk</Heading>
       </Center>
