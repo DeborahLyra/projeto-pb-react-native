@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Center, Flex, Heading, Text, IconButton, Icon, Fab } from 'native-base';
+import { Box, Center, Flex, Heading, Text, IconButton, Icon, Tooltip, Button } from 'native-base';
 import { Avatar } from '../../components/avatar/Avatar';
 import { MaterialIcons } from '@expo/vector-icons';
 import { formatDistanceToNow } from 'date-fns';
@@ -31,10 +31,11 @@ export function Posts({ content }: PostProps) {
 
   const formattedDate = formatDistanceToNow(new Date(content.publishedAt), { locale: ptBR, addSuffix: true });
 
-
   return (
-    <Box mt={10} px={4} bg='muted.600'>
-     
+    <Box mt={5} px={4} bg='muted.600'>
+
+      <Button bg="tertiary.600" mb={5}>Add a post</Button>
+
       <Box bg='muted.400' p={4} borderRadius={5} mb={4}>
         <Flex direction="row" alignItems="center" justifyContent="start">
           <Avatar src={content.author.avatarUrl} />
@@ -101,8 +102,8 @@ export function Posts({ content }: PostProps) {
       <Comment content={content} />
       <Comment content={content} />
 
-     
-      
+
+
     </Box>
   );
 }
