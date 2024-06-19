@@ -3,4 +3,5 @@ export type RootStackParamList = {
   Dashboard: undefined;
   Profile:undefined;
   Ranking:undefined;
+  Camera:undefined;
 };

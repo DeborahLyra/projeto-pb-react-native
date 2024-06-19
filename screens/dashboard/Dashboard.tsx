@@ -37,6 +37,10 @@ export function Dashboard() {
           <Pressable onPress={() => navigation.navigate('Ranking')}>
             <Text color="warmGray.50">Ranking</Text>
           </Pressable>
+          <Divider bg="tertiary.600" thickness="2" mx="2" orientation="vertical" />
+          <Pressable onPress={() => navigation.navigate('Camera')}>
+            <Text color="warmGray.50">Camera</Text>
+          </Pressable>
       </Flex>
     </Box>
      <Posts content={post}/>

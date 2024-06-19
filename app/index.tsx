@@ -8,6 +8,7 @@ import { Login } from '@/screens/login/Login';
 import { RootStackParamList } from '@/types';
 import { Profile } from '@/screens/profile/Profile';
 import { Ranking } from '@/screens/ranking/Ranking';
+import CameraComponent from '@/screens/camera/CameraComponent';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -20,6 +21,7 @@ export default function Index() {
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Profile" component={Profile} />
           <Stack.Screen name="Ranking" component={Ranking} /> 
+          <Stack.Screen name="Camera" component={CameraComponent} /> 
         </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>
